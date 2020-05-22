@@ -31,9 +31,10 @@ app.get('/', (request, response) => {
 })
 
 app.post('/getText', (request, response) => {
-    return response.end('ys')
-
     upload(request, response, err => {
+        if (err)
+            return response.end('err upload')
+
         if (!request.file)
             return response.status(500).end('error missing file')
         const filePath = `uploads/${request.file.originalname}`
