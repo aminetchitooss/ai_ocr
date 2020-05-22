@@ -32,8 +32,10 @@ app.get('/', (request, response) => {
 
 app.post('/getText', (request, response) => {
     upload(request, response, err => {
-        if (err)
+        if (err) {
+            console.log(err)
             return response.end('err upload')
+        }
 
         if (!request.file)
             return response.status(500).end('error missing file')
