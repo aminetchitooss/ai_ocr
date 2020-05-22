@@ -37,18 +37,19 @@ app.post('/getText', (request, response) => {
         const filePath = `uploads/${request.file.originalname}`
         fs.readFile(filePath, (err, data) => {
             if (err) return response.status(500).send('error in reading')
-            worker
-                .recognize(data)
-                // .progress(prog => {
-                //     console.log(prog)
-                // })
-                .then(result => {
-                    return response.send(result.text)
-                }).catch(err => {
-                    console.log(err)
-                    response.status(500).send('error in recon')
-                })
-                .finally(() => clearAll(null))
+            // worker
+            //     .recognize(data)
+            //     // .progress(prog => {
+            //     //     console.log(prog)
+            //     // })
+            //     .then(result => {
+            //         return response.send(result.text)
+            //     }).catch(err => {
+            //         console.log(err)
+            //         response.status(500).send('error in recon')
+            //     })
+            //     .finally(() => clearAll(null))
+            response.end('ys')
         })
     })
 })
