@@ -31,6 +31,8 @@ app.get('/', (request, response) => {
 })
 
 app.post('/getText', (request, response) => {
+    return response.end('ys')
+
     upload(request, response, err => {
         if (!request.file)
             return response.status(500).end('error missing file')
@@ -49,7 +51,6 @@ app.post('/getText', (request, response) => {
             //         response.status(500).send('error in recon')
             //     })
             //     .finally(() => clearAll(null))
-            response.end('ys')
         })
     })
 })
