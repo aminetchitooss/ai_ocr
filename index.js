@@ -35,10 +35,7 @@ app.post('/getText', (request, response) => {
         if (err) {
             console.log(err)
             return response.end('err upload')
-        }else{
-            console.log('goood')
         }
-
         if (!request.file)
             return response.status(500).end('error missing file')
         const filePath = `uploads/${request.file.originalname}`
@@ -93,7 +90,7 @@ function clearAll(pathNewFile) {
                 if (err) throw err;
             });
         for (const file of files) {
-            if (file.split('plac').length == 1)
+            if (file.split('placeholder').length == 1)
                 fs.unlink(path.join(directory, file), err => {
                     if (err) throw err;
                 });
