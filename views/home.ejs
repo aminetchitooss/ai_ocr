@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OCR</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div id="loaderFrame" class="block-screen loader-hidden">
+        <img class="loaderDim" src="/loader.gif">
+    </div>
+
+    <div class="header">
+        <h1>Get the texts from images</h1>
+        <p>Using a neural net (LSTM) based OCR engine which is focused on line recognition</p>
+    </div>
+    <section id="wrapper">
+        <div class="file-upload">
+            <div class="image-upload-wrap">
+                <input class="file-upload-input" id="getTxtFile" type='file' name="avatar" onchange="readURL(this);"
+                    accept="image/x-png,image/jpeg" />
+                <div class="drag-text">
+                    <h4>Drag and drop an image</h4>
+                </div>
+            </div>
+            <div class="file-upload-content">
+                <div class="image-title-wrap">
+                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
+                            class="image-title">Uploaded Image</span></button>
+                </div>
+                <img class="file-upload-image" src="#" alt="your image" />
+
+            </div>
+        </div>
+        <div class="content">
+            <!-- Tab links -->
+            <div class="tabs">
+                <button class="tablinks active" data-option="Image2TXT">
+                    <p data-title="Image2TXT">To text</p>
+                </button>
+                <button class="tablinks" data-option="Image2PDF">
+                    <p data-title="Image2PDF">To PDF</p>
+                </button>
+
+            </div>
+
+            <!-- Tab content -->
+            <div class="wrapper_tabcontent">
+                <div id="Image2PDF" class="tabcontent">
+                    <h3>To PDF</h3>
+                    <div class="btnFrame">
+                        <button id="download" class="file-upload-btn" type="submit" onclick="download()">Convert to
+                            PDF</button>
+                    </div>
+                </div>
+
+                <div id="Image2TXT" class="tabcontent active">
+                    <h3>To text</h3>
+                    <div class="btnFrame text">
+                        <button id="send" onclick="send()" class="file-upload-btn" type="submit">Get text</button>
+                    </div>
+                    <p id="convertedText"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
