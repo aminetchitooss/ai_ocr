@@ -1,4 +1,4 @@
-#  ocr (Optical character Recognition)
+#  OCR (Optical character Recognition)
 
 For this project I use 
 
@@ -27,7 +27,7 @@ npm i
 
 npm start
 
-#with nodemon (restart server with every save)
+#With nodemon (restart server with every save)
 npm run dev
 
 ```
