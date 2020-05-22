@@ -1,4 +1,4 @@
-#  ocr (Optical character Recognition)
+#  OCR (Optical character Recognition)
 
 For this project I use 
 
