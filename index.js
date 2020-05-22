@@ -91,9 +91,10 @@ function clearAll(pathNewFile) {
                 if (err) throw err;
             });
         for (const file of files) {
-            fs.unlink(path.join(directory, file), err => {
-                if (err) throw err;
-            });
+            if (file.split('plac').length == 1)
+                fs.unlink(path.join(directory, file), err => {
+                    if (err) throw err;
+                });
         }
     });
 }
