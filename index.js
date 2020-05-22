@@ -44,7 +44,7 @@ app.post('/getText', (request, response) => {
                 // })
                 .then(result => {
                     return response.send(result.text)
-                }).catch(err => response.status(500).send(JSON.stringify(err)))
+                }).catch(err => response.status(500).send(err))
                 .finally(() => clearAll(null))
         })
     })
