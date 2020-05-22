@@ -44,7 +44,10 @@ app.post('/getText', (request, response) => {
                 // })
                 .then(result => {
                     return response.send(result.text)
-                }).catch(err => response.status(500).send(err))
+                }).catch(err => {
+                    console.log(err)
+                    response.status(500).send('error in recon')
+                })
                 .finally(() => clearAll(null))
         })
     })
@@ -64,7 +67,10 @@ app.post('/download', (request, response) => {
                 .then(result => {
                     const fileTodownloadPath = `${__dirname}/${newFileName}.pdf`
                     return response.download(fileTodownloadPath)
-                }).catch(err => response.status(500).send(JSON.stringify(err)))
+                }).catch(err => {
+                    console.log(err)
+                    response.status(500).send('error in recon')
+                })
                 .finally(() => clearAll(`${__dirname}/${newFileName}.pdf`))
         })
     })
