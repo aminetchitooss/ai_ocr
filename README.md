@@ -27,7 +27,7 @@ npm i
 
 npm start
 
-#With nodemon (restart server with every save)
+#with nodemon (restart server with every save)
 npm run dev
 
 ```
